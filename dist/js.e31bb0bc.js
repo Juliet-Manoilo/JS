@@ -118,8 +118,49 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
+var userName = prompt('What is your name?');
+alert("Hello, ".concat(userName, "!"));
+var currentYear = 2020;
+var userYearBirth = Number(prompt('Year of your birth?'));
+alert(currentYear - userYearBirth);
+var perimeter = 4;
+var userLength = Number(prompt('Length of your square side?'));
+alert(userLength * perimeter);
+var pi = 3.14;
+var userRadius = Number(prompt('Put the radius'));
+alert(userRadius * 2 * pi);
+var userDistance = Number(prompt('Put the distance between A and B in km'));
+var userSpeed = Number(prompt('How many hours do you want to spent on this travel?'));
+alert(userDistance / userSpeed);
+var currentExchange = 0.85;
+var userUsdQuantity = Number(prompt('How much money do you want to exchange USD to Euro?'));
+alert(currentExchange * userUsdQuantity);
+var gigabyte = 1024;
+var file = 820;
+var userCard = Number(prompt('How many gigabytes contain your card?'));
+alert(userCard * gigabyte / file);
+var userMoney = Number(prompt('How much money do you want to spent on chokolate bars?'));
+var barPrice = Number(prompt('How much money does chokolate bar costs?'));
+alert(userMoney / barPrice);
+alert(userMoney % barPrice);
+var userNumber = Number(prompt('Put any number'));
+var x = userNumber;
+var revers = 0;
 
-},{}],"../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+while (x > 0) {
+  var y = x % 10;
+  revers = revers * 10 + y;
+  x = parseInt(x / 10);
+}
+
+alert(revers);
+var userCash = Number(prompt('How much money do you want to put on deposit?'));
+var bankYearPercent = 5;
+var monthsPerYear = 12;
+var twoMonthPercent = bankYearPercent / monthsPerYear * 2;
+var userSummary = userCash + twoMonthPercent;
+alert(userCash * twoMonthPercent / 100);
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -147,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50851" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56661" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -323,5 +364,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/js.e31bb0bc.js.map
