@@ -307,6 +307,45 @@ document.getElementById('task12').onclick = function func() {
   }
 };
 /* Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры. */
+
+
+document.getElementById('task13').onclick = function func() {
+  const userNumber2 = Number(prompt('Put any three-digit number'));
+  const number1 = parseInt(userNumber2 / 100);
+  const number2 = parseInt(userNumber2 / 10) % 10;
+  const number3 = userNumber2 % 10;
+  if (number1 === number2 || number2 === number3 || number1 === number3) alert('The same numbers were found');else alert('The same numbers were not found');
+};
+/* Запросить у пользователя год и проверить, високосный он или нет. 
+Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.*/
+
+
+document.getElementById('task14').onclick = function func() {
+  const userYear = Number(prompt('Put any year'));
+  if (userYear % 4 === 0 && userYear % 100 != 0 || userYear % 400 == 0) alert('This year is leap');else alert('This year is not leap');
+};
+/*Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.*/
+
+
+document.getElementById('task15').onclick = function func() {
+  const userNumber3 = Number(prompt('Put any five-digits number'));
+
+  if (a > 9999 && a < 100000) {
+    b = a / 10000;
+    a = a % 10000;
+    c = a / 1000;
+    a = a % 1000;
+    a = a % 100;
+    e = a / 10;
+    a = a % 10;
+
+    if (b == a && c == e) {
+      alert("Это число палиндром");
+    } else {
+      alert("Это число не палиндром");
+    }
+  }
+};
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -335,7 +374,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49191" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59067" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
