@@ -1,0 +1,35 @@
+.block1 {
+  color: black;
+}
+.block1__list {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+}
+.block1__item-task {
+  width: 19%;
+  margin-bottom: 1px;
+}
+.block1__title {
+  text-align: center;
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  width: 250px;
+  height: 110px;
+}
+button:hover {
+  background-color: white;
+}
+
+body {
+  background-color: bisque;
+}
+
+/*# sourceMappingURL=/style.ff1c4cab.css.map */

@@ -1,4 +1,33 @@
+.block1 {
+  color: black;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  &__item-task {
+    width: 19%;
+    margin-bottom: 1px;
+  }
+  &__title {
+    text-align: center;
+  }
+}
+
+button {
+  appearance: none;
+  cursor: pointer;
+  width: 250px;
+  height: 110px;
+  &:hover {
+    background-color: white;
+  }
+}
 body {
-  color: aqua;
   background-color: bisque;
 }
