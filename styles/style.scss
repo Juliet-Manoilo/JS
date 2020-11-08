@@ -4,7 +4,6 @@
   font-family: "Raleway", sans-serif;
   width: 90%;
   margin: auto;
-
   &__list {
     list-style: none;
     display: flex;
@@ -20,6 +19,7 @@
   }
   &__title {
     text-align: center;
+    font-size: 34px;
   }
 }
 
