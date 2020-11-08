@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"homework1.js":[function(require,module,exports) {
 /* Запросите у пользователя его имя и выведите в ответ: «Привет, его имя!»  */
 document.getElementById('task1').onclick = function func() {
   const userName = prompt('What is your name?');
@@ -131,7 +131,7 @@ document.getElementById('task2').onclick = function func() {
   const currentYear = 2020;
   const userYearBirth = Number(prompt('Year of your birth?'));
   const userAge = currentYear - userYearBirth;
-  alert(`Your age is ` + userAge);
+  alert(`Your age is  ${userAge}`);
 };
 /* Запросите у пользователя длину стороны квадрата и выведите периметр такого квадрата.  */
 
@@ -140,7 +140,7 @@ document.getElementById('task3').onclick = function func() {
   const perimeter = 4;
   const userLength = Number(prompt('Length of your square side?'));
   const userPerimeter = userLength * perimeter;
-  alert(`Perimeter of your square is ` + userPerimeter);
+  alert(`Perimeter of your square is  ${userPerimeter}`);
 };
 /* Запросите у пользователя радиус окружности и выведите площадь такой окружности.  */
 
@@ -149,7 +149,7 @@ document.getElementById('task4').onclick = function func() {
   const pi = 3.14;
   const userRadius = Number(prompt('Put the radius'));
   const circleArea = userRadius * 2 * pi;
-  alert(`Area of your circle is ` + circleArea);
+  alert(`Area of your circle is  ${circleArea}`);
 };
 /* Запросите у пользователя расстояние в км между двумя городами и за сколько часов он хочет добраться. 
 Посчитайте скорость, с которой необходимо двигаться, чтобы успеть вовремя.  */
@@ -159,7 +159,7 @@ document.getElementById('task5').onclick = function func() {
   const userDistance = Number(prompt('Put the distance between A and B in km'));
   const userTime = Number(prompt('How many hours do you want to spent on this travel?'));
   const userSpeed = userDistance / userTime;
-  alert(`You should move with a speed: ` + userSpeed + ` km/hour`);
+  alert(`You should move with a speed  ${userSpeed} km/hour`);
 };
 /* Реализуйте конвертор валют. Пользователь вводит доллары, программа переводит в евро. Курс валюты храните в константе.  */
 
@@ -168,7 +168,7 @@ document.getElementById('task6').onclick = function func() {
   const currentExchange = 0.85;
   const userUsdQuantity = Number(prompt('How much money do you want to exchange USD to Euro?'));
   const userEuroAmount = currentExchange * userUsdQuantity;
-  alert(`You will have ` + userEuroAmount + ` EURO`);
+  alert(`You will have  ${userEuroAmount}  EURO`);
 };
 /* Пользователь указывает объем флешки в Гб. Программа должна посчитать, сколько файлов размером в 820 Мб помещается на флешку.  */
 
@@ -178,7 +178,7 @@ document.getElementById('task7').onclick = function func() {
   const file = 820;
   const userCard = Number(prompt('How many gigabytes contain your card?'));
   const userFilesQuantity = userCard * gigabyte / file;
-  alert(`Your card storage can contain ` + userFilesQuantity + ` files per 820 Mb`);
+  alert(`Your card storage can contain   ${userFilesQuantity}  files per 820 Mb`);
 };
 /* Пользователь вводит сумму денег в кошельке и цену одной шоколадки. 
 Программа выводит, сколько шоколадок может купить пользователь, и сколько сдачи у него останется.  */
@@ -189,7 +189,7 @@ document.getElementById('task8').onclick = function func() {
   const barPrice = Number(prompt('How much money does chokolate bar costs?'));
   const userChocolate = userMoney / barPrice;
   const oddMoney = userMoney % barPrice;
-  alert(`You can buy ` + userChocolate + ` chocolate bars and your odd money is ` + oddMoney);
+  alert(`You can buy  ${userChocolate} chocolate bars and your odd money is  ${oddMoney}`);
 };
 /* Запросите у пользователя трехзначное число и выведите его задом наперед. 
 Для решения задачи вам понадобится оператор % (остаток от деления).  */
@@ -197,17 +197,17 @@ document.getElementById('task8').onclick = function func() {
 
 document.getElementById('task9').onclick = function func() {
   const userNumber = Number(prompt('Put any number'));
-  var x = userNumber;
-  var revers = 0;
+  let x = userNumber;
+  let revers = 0;
 
   while (x > 0) {
-    var y = x % 10;
+    const y = x % 10;
     revers = revers * 10 + y;
     x = parseInt(x / 10);
   }
 
-  const numberContrary = revers;
-  alert(`Your number on the contrary is ` + numberContrary);
+  let numberContrary = revers;
+  alert(`Your number on the contrary is  ${numberContrary}`);
 };
 /* Пользователь вводит сумму вклада в банк на 2 месяца, с процентной ставкой депозита 5% годовых. 
 Вывести сумму начисленных процентов. */
@@ -220,13 +220,12 @@ document.getElementById('task10').onclick = function func() {
   const twoMonthPercent = bankYearPercent / monthsPerYear * 2;
   const userSummary = userCash + twoMonthPercent;
   const userEarning = userCash * twoMonthPercent / 100;
-  alert(`You will earn ` + userEarning + ` for 2 months`);
+  alert(`You will earn  ${userEarning}  for 2 months`);
 };
+},{}],"homework2.js":[function(require,module,exports) {
 /* LESSON JS-2: Типи даних та оператори
 Запросить у пользователя его возраст и определить, кем он является: 
 ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...). */
-
-
 document.getElementById('task11').onclick = function func() {
   const userAge2 = Number(prompt('How old are you?'));
 
@@ -329,24 +328,18 @@ document.getElementById('task14').onclick = function func() {
 
 document.getElementById('task15').onclick = function func() {
   const userNumber3 = Number(prompt('Put any five-digits number'));
-
-  if (a > 9999 && a < 100000) {
-    b = a / 10000;
-    a = a % 10000;
-    c = a / 1000;
-    a = a % 1000;
-    a = a % 100;
-    e = a / 10;
-    a = a % 10;
-
-    if (b == a && c == e) {
-      alert("Это число палиндром");
-    } else {
-      alert("Это число не палиндром");
-    }
-  }
 };
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var obj = _interopRequireWildcard(require("./homework1.js"));
+
+var a = _interopRequireWildcard(require("./homework2.js"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -374,7 +367,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59067" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56347" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
