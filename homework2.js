@@ -1,3 +1,4 @@
+export const = homework2 = () => {
 /* LESSON JS-2: Типи даних та оператори
 Запросить у пользователя его возраст и определить, кем он является: 
 ребенком (0–2), подростком (12–18), взрослым (18_60) или пенсионером (60– ...). */
@@ -179,4 +180,4 @@ alert ('The circle does not fit in the square');
     let oldDate = new Date(date[2], date[1]-1, date[0]); 
     oldDate.setDate(oldDate.getDate()+1);
     alert(`The next day is ${oldDate}`);
-  }
+  }}
