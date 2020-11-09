@@ -1,4 +1,4 @@
-export const = homework1 = () => {
+export const homework1 = () => {
 /* Запросите у пользователя его имя и выведите в ответ: «Привет, его имя!»  */
 document.getElementById('task1').onclick = function func() {
   const userName = prompt('What is your name?')
