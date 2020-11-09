@@ -414,10 +414,25 @@ document.getElementById('task19').onclick = function func() {
   const userQuestion1 = Number(prompt('Do you learn Javascript? 1 - yes; 2 - sometimes; 3 - no;'));
   const userQuestion2 = Number(prompt('Do you learn English? 1 - yes; 2 - sometimes; 3 - no;'));
   const userQuestion3 = Number(prompt('Do you like programming? 1 - yes; 2 - when my code works; 3 - no;'));
-  const score = 0;
-  if (userQuestion1 == 1) score += 2;
-  if (userQuestion2 == 1) score += 2;
-  if (userQuestion3 == 3) score += 2;
+  let score = 0;
+
+  if (userQuestion1 == 1) {
+    score += 2;
+  }
+
+  ;
+
+  if (userQuestion2 == 1) {
+    score += 2;
+  }
+
+  ;
+
+  if (userQuestion3 == 1) {
+    score += 2;
+  }
+
+  ;
   alert(`Your score is  ${score} points`);
 };
 /*Запросить дату (день, месяц, год) и вывести следующую за ней дату.
@@ -469,7 +484,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57289" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62656" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -161,13 +161,13 @@ alert ('The circle does not fit in the square');
     const userQuestion1 = Number(prompt('Do you learn Javascript? 1 - yes; 2 - sometimes; 3 - no;'));
     const userQuestion2 = Number(prompt('Do you learn English? 1 - yes; 2 - sometimes; 3 - no;'));
     const userQuestion3 = Number(prompt('Do you like programming? 1 - yes; 2 - when my code works; 3 - no;'));
-    const score = 0;
+    let score = 0;
     if (userQuestion1 == 1)
-        score += 2;
+        {score += 2};
     if (userQuestion2 == 1)
-        score += 2;
-    if (userQuestion3 == 3)
-        score += 2;
+        {score += 2};
+    if (userQuestion3 == 1)
+        {score += 2};
     alert(`Your score is  ${score} points`);
  }
 
