@@ -37,9 +37,17 @@ alert(`The greatest common divisor of your numbers is ${greatestCommonDivisor}`)
 
 /* 3. Запросить у пользователя число и вывести все делители этого числа. */
 document.getElementById('task23').onclick = function func() {
-    let userNumber3 = Number(prompt('Put any number'));
+	const userNumber3 = Number(prompt('Put any number'));
+	let divisors = '1';
+    for (let i = 2; i <= userNumber3; i++) {
+        if (userNumber3 % i == 0) {
+            divisors += `, ${i}`;
+        }
+    }
+    alert(`The divisors of your number are ${divisors}`);
+}}
+
+/* 4. Определить количество цифр в введенном числе. */
+document.getElementById('task24').onclick = function func() {
+	const userNumber4 = Number(prompt('Put any number'));
 }
-
-}
-
-

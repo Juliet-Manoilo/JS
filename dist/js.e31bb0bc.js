@@ -514,11 +514,26 @@ const homework3 = () => {
 
 
   document.getElementById('task23').onclick = function func() {
-    let userNumber3 = Number(prompt('Put any number'));
+    const userNumber3 = Number(prompt('Put any number'));
+    let divisors = '1';
+
+    for (let i = 2; i <= userNumber3; i++) {
+      if (userNumber3 % i == 0) {
+        divisors += `, ${i}`;
+      }
+    }
+
+    alert(`The divisors of your number are ${divisors}`);
   };
 };
+/* 4. Определить количество цифр в введенном числе. */
+
 
 exports.homework3 = homework3;
+
+document.getElementById('task24').onclick = function func() {
+  const userNumber4 = Number(prompt('Put any number'));
+};
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -559,7 +574,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61461" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58799" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
