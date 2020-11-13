@@ -180,4 +180,6 @@ alert ('The circle does not fit in the square');
     let oldDate = new Date(date[2], date[1]-1, date[0]); 
     oldDate.setDate(oldDate.getDate()+1);
     alert(`The next day is ${oldDate}`);
-  }}
+  }
+
+  }
