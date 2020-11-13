@@ -45,9 +45,19 @@ document.getElementById('task23').onclick = function func() {
         }
     }
     alert(`The divisors of your number are ${divisors}`);
-}}
+}
 
 /* 4. Определить количество цифр в введенном числе. */
 document.getElementById('task24').onclick = function func() {
-	const userNumber4 = Number(prompt('Put any number'));
+	const userNumber4 = String(prompt('Put any number'));
+	const userDigits = String(userNumber4).length;
+	alert(`Your number consist of ${userDigits} digits`);
 }
+
+/* 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. 
+При этом также посчитать, сколько четных и нечетных. 
+Вывести статистику на экран. 
+Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем. */
+document.getElementById('task25').onclick = function func() {		
+
+}}

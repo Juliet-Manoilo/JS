@@ -525,15 +525,24 @@ const homework3 = () => {
 
     alert(`The divisors of your number are ${divisors}`);
   };
-};
-/* 4. Определить количество цифр в введенном числе. */
+  /* 4. Определить количество цифр в введенном числе. */
 
+
+  document.getElementById('task24').onclick = function func() {
+    const userNumber4 = String(prompt('Put any number'));
+    const userDigits = String(userNumber4).length;
+    alert(`Your number consist of ${userDigits} digits`);
+  };
+  /* 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. 
+  При этом также посчитать, сколько четных и нечетных. 
+  Вывести статистику на экран. 
+  Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем. */
+
+
+  document.getElementById('task25').onclick = function func() {};
+};
 
 exports.homework3 = homework3;
-
-document.getElementById('task24').onclick = function func() {
-  const userNumber4 = Number(prompt('Put any number'));
-};
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -574,7 +583,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58799" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60764" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
