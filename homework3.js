@@ -88,21 +88,30 @@ alert (`You put ${positiveNumbers} positive numbers, ${negativeNumbers} negative
 Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. 
 И так до тех пор, пока пользователь не откажется.*/
 document.getElementById('task26').onclick = function func() {
-const userNumber6 = Number(prompt('Put any number'));
-const userNumber7 = Number(prompt('Put one more number'));
-const calcFunction = prompt('Which calculator function do you want to use: "+", "-", "*" or "/"?');
-let repeating = true;
-let calcResult;
-while (repeating) {
-	if (calcFunction = '+') {
-		calcResult = userNumber6 + userNumber7;}
-alert (`${calcResult}`);
-	
-repeating = confirm('Do want to repeat a calculator function?')}
 
+	let result;
+    let repeat = true
+    while (repeat) {
+        const number1 = +prompt('Put any number');
+        const number2 = +prompt('Put one more number');
+        const calcFunction = prompt('Which calculator function do you want to use: "+", "-", "*" or "/"');
+        if (calcFunction == '+') {
+            result = number1 + number2;
+        } else if (calcFunction == '-') {
+            result = number1 - number2;
+        } else if (calcFunction == '*') {
+            result = number1 * number2;
+        } else if (calcFunction == '/') {
+            result = number1 / number2;
+        }
+        alert(`The result of the arithmetic operation is ${result}`);
+        repeat = confirm(`Do you want to repeat the operation?`);
+    }
+}
 
-	
-
+/* 7. Запросить у пользователя число и на сколько цифр его сдвинуть. 
+Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).*/
+document.getElementById('task27').onclick = function func() {
 
 
 }
