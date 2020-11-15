@@ -54,10 +54,56 @@ document.getElementById('task24').onclick = function func() {
 	alert(`Your number consist of ${userDigits} digits`);
 }
 
-/* 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. 
+/* 5. Запросить у пользователя 10 чисел и подсчитать, 
+сколько он ввел положительных, отрицательных и нулей. 
 При этом также посчитать, сколько четных и нечетных. 
 Вывести статистику на экран. 
 Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем. */
 document.getElementById('task25').onclick = function func() {		
+let positiveNumbers = 0;
+let negativeNumbers = 0;
+let zero = 0;
+let evenNumber = 0;
+let oddNumber = 0;
+for (let i = 0; i < 10; i++) {let userNumber5 = +prompt('Enter a number');
+if (userNumber5 > 0) {
+	++positiveNumbers;
+} else
+{
+	++negativeNumbers
+};
+if (userNumber5 === 0) {
+	++zero;
+}; 
+if 
+	(userNumber5 % 2 === 0) {
+		++evenNumber;}
+	 else {
+		++oddNumber;
+	}};
+alert (`You put ${positiveNumbers} positive numbers, ${negativeNumbers} negative numbers, ${zero} zeros, ${evenNumber} even numbers and ${oddNumber} odd numbers`)
+}
 
-}}
+/*6. Зациклить калькулятор. 
+Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. 
+И так до тех пор, пока пользователь не откажется.*/
+document.getElementById('task26').onclick = function func() {
+const userNumber6 = Number(prompt('Put any number'));
+const userNumber7 = Number(prompt('Put one more number'));
+const calcFunction = prompt('Which calculator function do you want to use: "+", "-", "*" or "/"?');
+let repeating = true;
+let calcResult;
+while (repeating) {
+	if (calcFunction = '+') {
+		calcResult = userNumber6 + userNumber7;}
+alert (`${calcResult}`);
+	
+repeating = confirm('Do want to repeat a calculator function?')}
+
+
+	
+
+
+
+}
+}
