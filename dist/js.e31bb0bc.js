@@ -682,6 +682,42 @@ Put 3, if your number bigger then ${N}.`);
 };
 
 exports.homework3 = homework3;
+},{}],"homework4.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.homework4 = void 0;
+
+const homework4 = () => {
+  /*Lesson 4: Функції
+  1. Написать функцию, которая принимает 2 числа и возвращает -1, если
+      первое меньше, чем второе; 1 – если первое больше, чем второе; и 0 –
+      если числа равны.*/
+  document.getElementById('task31').onclick = function func() {
+    let defining;
+
+    const calc = function (a, b) {
+      if (a < b) {
+        defining = -1;
+      } else if (a > b) {
+        defining = 1;
+      } else defining = 0;
+
+      return defining;
+    };
+
+    const userFirstNumber = Number(prompt('Put any number'));
+    const userSecondNumber = Number(prompt('Put one more number'));
+    alert(`If your first number is smaller than second you will get "-1". 
+If your first number is bigger than second you will get "1". 
+If your numbers are equal you will get "0"`);
+    alert(calc(userFirstNumber, userSecondNumber));
+  };
+};
+
+exports.homework4 = homework4;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -691,10 +727,13 @@ var _homework2 = require("./homework2.js");
 
 var _homework3 = require("./homework3.js");
 
+var _homework4 = require("./homework4.js");
+
 (0, _homework.homework1)();
 (0, _homework2.homework2)();
 (0, _homework3.homework3)();
-},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _homework4.homework4)();
+},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js","./homework4.js":"homework4.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -722,7 +761,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56616" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51060" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
