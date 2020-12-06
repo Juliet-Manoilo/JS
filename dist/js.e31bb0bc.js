@@ -1021,27 +1021,30 @@ const homework5 = () => {
        перерыв на 1 час. */
   document.getElementById('task41').onclick = function func() {
     const automobile = {
-      'manufacturer': 'Ford',
-      'model': 'Focus',
-      'year': '2016',
-      "average speed": '70 km/h'
+      manufacturer: 'Ford',
+      model: 'Focus',
+      year: '2016',
+      averagespeed: '70'
     };
 
     function autoInfo(automobile) {
-      return automobile.manufacturer, automobile.model, automobile.year, automobile['average speed'];
+      for (const key in automobile) {
+        alert(`${key}: ${automobile[key]}`);
+      }
     }
 
-    function calcTime(automobile, distance) {
-      let time = distance / automobile['average speed'];
-      time = parseInt(time / 4) + time;
-      return time;
+    function calcTimeForDistance(automobile, distance = 1000) {
+      let hour;
+      hour = distance / automobile.averagespeed;
+      hour = parseInt(hour / 4) + hour;
+      return hour;
     }
 
-    const info = autoInfo(automobile);
-    alert(`The info about an automobile: ${info}`);
-    const userDistance = Number(prompt('Put the distance between A and B in km'));
-    const timeCalc = calcTime(automobile, userDistance);
-    alert(`You need ${timeCalc} hours for getting your destination`);
+    autoInfo(automobile);
+    const distance = prompt(`Enter distance`);
+    const timeCalc = calcTimeForDistance(automobile, distance);
+    alert(`You need ${timeCalc} hours for getting your destination`); ///const userDistance = Number(prompt('Put the distance between A and B in km'));
+    ///alert(AverageTime(userDistance));
   };
 };
 
@@ -1092,7 +1095,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57907" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60688" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
