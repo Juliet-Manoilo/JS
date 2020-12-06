@@ -1002,6 +1002,50 @@ If your numbers are equal you will get "0"`);
 };
 
 exports.homework4 = homework4;
+},{}],"homework5.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.homework5 = void 0;
+
+const homework5 = () => {
+  /* Lesson JS-5. Об’єкти
+  1.1. Создать объект, описывающий автомобиль (производитель, модель,
+      год выпуска, средняя скорость), и следующие функции для работы с
+      этим объектом: Функция для вывода на экран информации об автомобиле;
+      Функция для подсчета необходимого времени для преодоления
+      переданного расстояния со средней скоростью.
+      Учтите, что через каждые 4 часа дороги водителю необходимо делать
+       перерыв на 1 час. */
+  document.getElementById('task41').onclick = function func() {
+    const automobile = {
+      'manufacturer': 'Ford',
+      'model': 'Focus',
+      'year': '2016',
+      "average speed": '70 km/h'
+    };
+
+    function autoInfo(automobile) {
+      return automobile.manufacturer, automobile.model, automobile.year, automobile['average speed'];
+    }
+
+    function calcTime(automobile, distance) {
+      let time = distance / automobile['average speed'];
+      time = parseInt(time / 4) + time;
+      return time;
+    }
+
+    const info = autoInfo(automobile);
+    alert(`The info about an automobile: ${info}`);
+    const userDistance = Number(prompt('Put the distance between A and B in km'));
+    const timeCalc = calcTime(automobile, userDistance);
+    alert(`You need ${timeCalc} hours for getting your destination`);
+  };
+};
+
+exports.homework5 = homework5;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -1013,11 +1057,14 @@ var _homework3 = require("./homework3.js");
 
 var _homework4 = require("./homework4.js");
 
+var _homework5 = require("./homework5.js");
+
 (0, _homework.homework1)();
 (0, _homework2.homework2)();
 (0, _homework3.homework3)();
 (0, _homework4.homework4)();
-},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js","./homework4.js":"homework4.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _homework5.homework5)();
+},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js","./homework4.js":"homework4.js","./homework5.js":"homework5.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1045,7 +1092,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64124" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57907" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

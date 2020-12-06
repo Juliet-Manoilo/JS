@@ -16,6 +16,10 @@
 .block1__item-task {
   width: 19%;
   margin-bottom: 2px;
+  padding: 2px;
+}
+.block1__item-task--wide {
+  width: 32%;
 }
 .block1__title {
   text-align: center;
@@ -30,7 +34,7 @@ button {
   border: 2px solid black;
   border-radius: 10px;
   font-family: "Raleway", sans-serif;
-  font-size: 16px;
+  font-size: 17px;
 }
 button:hover {
   background-color: white;
