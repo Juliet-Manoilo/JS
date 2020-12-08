@@ -1043,8 +1043,69 @@ const homework5 = () => {
     autoInfo(automobile);
     const distance = prompt(`Enter distance`);
     const timeCalc = calcTimeForDistance(automobile, distance);
-    alert(`You need ${timeCalc} hours for getting your destination`); ///const userDistance = Number(prompt('Put the distance between A and B in km'));
-    ///alert(AverageTime(userDistance));
+    alert(`You need ${timeCalc} hours for getting your destination`);
+  };
+  /* 2. Создать объект, хранящий в себе отдельно числитель и знаменатель
+      дроби, и следующие функции для работы с этим объектом: Функция
+      сложения 2-х объектов-дробей; Функция вычитания 2-х объектов-дробей;
+      Функция умножения 2-х объектов-дробей; Функция деления 2-х
+      объектов-дробей; Функция сокращения объекта-дроби.*/
+
+
+  document.getElementById('task42').onclick = function func() {
+    function Fraction(upNumber, downNumber) {
+      return {
+        upNumber: upNumber,
+        downNumber: downNumber
+      };
+    }
+
+    const firstNumber = Fraction(2, 3);
+    const secondNumber = Fraction(3, 4);
+
+    function addition(obj1, obj2) {
+      const resultUpNumber = obj1.upNumber + obj2.upNumber;
+      const resultDownNumber = obj1.downNumber + obj2.downNumber;
+      console.log(`${resultUpNumber}/${resultDownNumber}`);
+    }
+
+    function substraction(obj1, obj2) {
+      const resultUpNumber = obj1.upNumber - obj2.upNumber;
+      const resultDownNumber = obj1.downNumber - obj2.downNumber;
+      console.log(`${resultUpNumber}/${resultDownNumber}`);
+    }
+
+    function multiFraction(obj1, obj2) {
+      const resultUpNumber = obj1.upNumber * obj2.upNumber;
+      const resultDownNumber = obj1.downNumber * obj2.downNumber;
+      console.log(`${resultUpNumber}/${resultDownNumber}`);
+    }
+
+    function division(obj1, obj2) {
+      const resultUpNumber = obj1.upNumber / obj2.upNumber;
+      const resultDownNumber = obj1.downNumber / obj2.downNumber;
+      console.log(`${resultUpNumber}/${resultDownNumber}`);
+    }
+
+    function converting(obj) {
+      let resultUpNumber = 1;
+      let resultDownNumber = 1;
+
+      for (let i = 2; i <= obj.upNumber; i++) {
+        if (obj.upNumber % i === 0 && obj.downNumber % i === 0) resultUpNumber = obj.upNumber / i;
+        resultDownNumber = obj.downNumber / i;
+      }
+
+      console.log(`${resultUpNumber}/${resultDownNumber}`);
+    }
+
+    multiFraction(firstNumber, secondNumber);
+    addition(firstNumber, secondNumber);
+    substraction(firstNumber, secondNumber);
+    division(firstNumber, secondNumber);
+    converting(firstNumber);
+    converting(secondNumber);
+    alert(`Look the console for checking`);
   };
 };
 
@@ -1095,7 +1156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60688" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59234" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
