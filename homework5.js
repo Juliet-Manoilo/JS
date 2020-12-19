@@ -113,17 +113,17 @@ document.getElementById('task42').onclick = function func() {
 
         function addSeconds(s) {
             time.setSeconds(time.getSeconds() + s);
-            alert(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
+            alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
         }
 
         function addMinutes(m) {
             time.setMinutes(time.getMinutes() + m);
-            alert(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
+            alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
         }
 
         function addHours(h) {
             time.setHours(time.getHours() + h);
-            alert(time.getHours()+":"+time.getMinutes()+":"+time.getSeconds());
+            alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
         }
 
     display();

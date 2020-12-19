@@ -18,3 +18,7 @@ homework4 ()
 import {homework5} from './homework5.js';
 
 homework5 ()
+
+import {homework6} from './homework6.js';
+
+homework6 ()

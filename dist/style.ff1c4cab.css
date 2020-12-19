@@ -21,6 +21,9 @@
 .block1__item-task--wide {
   width: 32.5%;
 }
+.block1__item-task--fourth {
+  width: 24%;
+}
 .block1__title {
   text-align: center;
   font-size: 34px;

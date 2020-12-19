@@ -1131,17 +1131,17 @@ const homework5 = () => {
 
     function addSeconds(s) {
       time.setSeconds(time.getSeconds() + s);
-      alert(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+      alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
     }
 
     function addMinutes(m) {
       time.setMinutes(time.getMinutes() + m);
-      alert(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+      alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
     }
 
     function addHours(h) {
       time.setHours(time.getHours() + h);
-      alert(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+      alert(`${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
     }
 
     display();
@@ -1155,6 +1155,56 @@ const homework5 = () => {
 };
 
 exports.homework5 = homework5;
+},{}],"homework6.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.homework6 = void 0;
+
+const homework6 = () => {
+  /* Lesson JS-6. Масиви
+  1. 1. Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, 
+  необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
+  Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
+  Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, 
+  необходимо увеличивать количество в существующей покупке, а не добавлять новую.
+  Покупка продукта. Функция принимает название продукта и отмечает его как купленный. */
+  document.getElementById('task51').onclick = function func() {
+    let list = [{
+      name: 'potatoes',
+      quantity: 4,
+      isBought: 1
+    }, {
+      name: 'butter',
+      quantity: 1,
+      isBought: 1
+    }, {
+      name: 'milk',
+      quantity: 1,
+      isBought: 0
+    }, {
+      name: 'meat',
+      quantity: 3,
+      isBought: 1
+    }, {
+      name: 'toilet paper',
+      quantity: 5,
+      isBought: 0
+    }];
+
+    function alertList(x) {
+      let nonBought = x.filter(item => item.isBought === 0);
+      let bought = x.find(item => item.isBought === 1);
+      alert(`You should buy this: ${nonBought}; this is bought already: ${bought}`);
+    }
+
+    alertList(list);
+  };
+};
+
+exports.homework6 = homework6;
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -1168,12 +1218,15 @@ var _homework4 = require("./homework4.js");
 
 var _homework5 = require("./homework5.js");
 
+var _homework6 = require("./homework6.js");
+
 (0, _homework.homework1)();
 (0, _homework2.homework2)();
 (0, _homework3.homework3)();
 (0, _homework4.homework4)();
 (0, _homework5.homework5)();
-},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js","./homework4.js":"homework4.js","./homework5.js":"homework5.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _homework6.homework6)();
+},{"./homework1.js":"homework1.js","./homework2.js":"homework2.js","./homework3.js":"homework3.js","./homework4.js":"homework4.js","./homework5.js":"homework5.js","./homework6.js":"homework6.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1201,7 +1254,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52012" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64263" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
