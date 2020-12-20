@@ -1172,7 +1172,7 @@ const homework6 = () => {
   необходимо увеличивать количество в существующей покупке, а не добавлять новую.
   Покупка продукта. Функция принимает название продукта и отмечает его как купленный. */
   document.getElementById('task51').onclick = function func() {
-    let list = [{
+    const list = [{
       name: 'potatoes',
       quantity: 4,
       isBought: 1
@@ -1193,16 +1193,37 @@ const homework6 = () => {
       quantity: 5,
       isBought: 0
     }];
-
-    function alertList(x) {
-      let nonBought = x.filter(item => item.isBought === 0);
-      let bought = x.find(item => item.isBought === 1);
-      alert(`You should buy this: ${nonBought}; this is bought already: ${bought}`);
-    }
-
-    alertList(list);
+    list.sort(function alertList(a, b) {
+      return a.isBought - b.isBought;
+    });
+    alert(`You should buy this: ${list[0].quantity} ${list[0].name}, ${list[1].quantity} ${list[1].name}; this is bought already: ${list[2].name}, ${list[3].name}, ${list[4].name}`);
   };
 };
+/* const shopList = [
+  { pName: 'Банан', amount: 2 },
+  { pName: 'Апельсин', amount: 5, bought: true },
+  { pName: 'Молоко', bought: true },
+  { pName: 'Груша', amount: 10 }
+].map(prodDef => new Product(prodDef));
+
+const addToShopList = prodDef => {  // при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую
+  const prod = shopList.find(prod => prod.pName === prodDef.pName); 
+  if (!prod) return shopList.push(new Product(prodDef)); 
+  prod.amount += prodDef.amount; 
+}; 
+const printShopList = () => shopList.forEach(
+  (prod, i) => console.log(`${i + 1}. ${prod}`)
+); 
+
+shopList.sort(Product.sortDefault);
+printShopList();
+console.log('---'); 
+
+addToShopList({ pName: 'Банан', amount: 3 });
+addToShopList({ pName: 'Шоколад', amount: 2 });
+shopList.sort(Product.sortDefault);
+printShopList(); */
+
 
 exports.homework6 = homework6;
 },{}],"index.js":[function(require,module,exports) {
@@ -1254,7 +1275,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64263" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53712" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
