@@ -1163,67 +1163,108 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.homework6 = void 0;
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 const homework6 = () => {
   /* Lesson JS-6. Масиви
-  1. 1. Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, 
+  1. Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, 
   необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
   Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
   Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, 
   необходимо увеличивать количество в существующей покупке, а не добавлять новую.
   Покупка продукта. Функция принимает название продукта и отмечает его как купленный. */
   document.getElementById('task51').onclick = function func() {
-    const list = [{
-      name: 'potatoes',
-      quantity: 4,
-      isBought: 1
+    class Product {
+      constructor(params = {}) {
+        Object.assign(this, {
+          pName: null,
+          amount: 1,
+          bought: false
+        }, _extends({}, params));
+      }
+
+      static sortDefault(a, b) {
+        return (a.bought - b.bought) * 10 + a.pName.localeCompare(b.pName);
+      }
+
+    }
+
+    Product.prototype.toString = function () {
+      return ` ${this.bought ? 'no need to buy' : 'You should buy '} ${this.amount} ${this.pName} `;
+    };
+
+    const shopList = [{
+      pName: 'meat',
+      amount: 2,
+      bought: false
     }, {
-      name: 'butter',
-      quantity: 1,
-      isBought: 1
+      pName: 'potatoes',
+      amount: 5,
+      bought: true
     }, {
-      name: 'milk',
-      quantity: 1,
-      isBought: 0
+      pName: 'butter',
+      bought: true
     }, {
-      name: 'meat',
-      quantity: 3,
-      isBought: 1
+      pName: 'bread',
+      amount: 3,
+      bought: false
     }, {
-      name: 'toilet paper',
-      quantity: 5,
-      isBought: 0
-    }];
-    list.sort(function alertList(a, b) {
-      return a.isBought - b.isBought;
+      pName: 'toilet paper',
+      amount: 7,
+      bought: false
+    }].map(prodDef => new Product(prodDef));
+
+    const addToShopList = prodDef => {
+      const prod = shopList.find(prod => prod.pName === prodDef.pName);
+      if (!prod) return shopList.push(new Product(prodDef));
+      prod.amount += prodDef.amount;
+    };
+
+    const printShopList = () => shopList.forEach((prod, i) => console.log(`${i + 1}. ${prod}`));
+
+    alert(shopList.sort(Product.sortDefault));
+    printShopList();
+    const userAddProd = String(prompt(`What do you want to add to the shopping list?`));
+    const userQuantity = Number(prompt(`How many ${userAddProd} do you want to add?`));
+    addToShopList({
+      pName: userAddProd,
+      amount: userQuantity
     });
-    alert(`You should buy this: ${list[0].quantity} ${list[0].name}, ${list[1].quantity} ${list[1].name}; this is bought already: ${list[2].name}, ${list[3].name}, ${list[4].name}`);
+    alert(shopList.sort(Product.sortDefault));
+    printShopList();
+    const deleteFromList = prompt(`Did you buy something already?`, "meat");
+    let isProductName = false;
+
+    for (let i = 0; i < shopList.length; i++) {
+      if (shopList[i].pName == deleteFromList) {
+        isProductName = true;
+
+        if (shopList[i].bought == false) {
+          shopList[i].bought = true;
+        } else {
+          alert(`You have bought this product already.`);
+        }
+      }
+    }
+
+    if (isProductName == false) {
+      alert(`There is no this product in the list`);
+    }
+
+    alert(shopList.sort(Product.sortDefault));
   };
+  /* 2. Создать массив, описывающий чек в магазине. 
+  Каждый элемент массива состоит из названия товара, количества и цены за единицу товара. 
+  Написать следующие функции:
+  
+  Распечатка чека на экран;
+  Подсчет общей суммы покупки;
+  Получение самой дорогой покупки в чеке;
+  Подсчет средней стоимости одного товара в чеке. */
+
+
+  document.getElementById('task52').onclick = function func() {};
 };
-/* const shopList = [
-  { pName: 'Банан', amount: 2 },
-  { pName: 'Апельсин', amount: 5, bought: true },
-  { pName: 'Молоко', bought: true },
-  { pName: 'Груша', amount: 10 }
-].map(prodDef => new Product(prodDef));
-
-const addToShopList = prodDef => {  // при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую
-  const prod = shopList.find(prod => prod.pName === prodDef.pName); 
-  if (!prod) return shopList.push(new Product(prodDef)); 
-  prod.amount += prodDef.amount; 
-}; 
-const printShopList = () => shopList.forEach(
-  (prod, i) => console.log(`${i + 1}. ${prod}`)
-); 
-
-shopList.sort(Product.sortDefault);
-printShopList();
-console.log('---'); 
-
-addToShopList({ pName: 'Банан', amount: 3 });
-addToShopList({ pName: 'Шоколад', amount: 2 });
-shopList.sort(Product.sortDefault);
-printShopList(); */
-
 
 exports.homework6 = homework6;
 },{}],"index.js":[function(require,module,exports) {
@@ -1275,7 +1316,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53712" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58486" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
